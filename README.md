@@ -11,35 +11,31 @@
 
 ## Purpose of this package
 
-This package contains Julia versions of selected `code snippets` and `mcmc models` contained in the R package "rethinking" associated with the book [Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/) by Richard McElreath.
+The setup of version 3 of StatisticalRethinking.jl is very different from version 2. Basically this reflects 3 important developments in the Julia eco system:
 
-As stated many times by the author in his [online lectures](https://www.youtube.com/watch?v=ENxTrFf9a7c&list=PLDcUM9US4XdNM4Edgs7weiyIguLSToZRI), this package is not intended to take away the hands-on component of the course. The clips are just meant to get you going but learning means experimenting, in this case using Julia and Stan.
+1. Julia supports at least 4 candidates to run mcmc simulations.
+2. Julia supports the development of both `packages` and `projects`.
+3. In addition to Jupyter notebooks, a new approach is available with the release of Pluto.jl.
+
+The `package` StatisticalRethinking.jl v3 will be independent of the specific mcmc option selected. The Stan (`cmdstan`) version can be found in the `project` StatisticalRethinkingStan.jl.
+
+The intention is to have similar projects for e.g. Turing.jl and DynamicHMC.jl, i.e. StatisticalRethinkingTuring.jl and StatisticalRethinkingDhmc.jl. Over time these `projects` will replace the current packages StanModels.jl, TuringModels.jl and DynamicHMCModels.jl. 
+
+The StatisticalRethinking.jl v3 `package` will only contain common components and resources of value across the available mcmc options.
+
+StatisticalRethinkingStan.jl will include Pluto.jl notebook versions of the scripts in StatisticalRethinking.jl v2.
+
+As stated many times by the author in his [online lectures](https://www.youtube.com/watch?v=ENxTrFf9a7c&list=PLDcUM9US4XdNM4Edgs7weiyIguLSToZRI), this package is not intended to take away the hands-on component of the course. The clips are just meant to get you going but learning means experimenting.
+
+As always, any feedback is appreciated. Please open an issue.
 
 ## Versions
 
 ### Version 3.0.0 (in preparation)
 
-I have started to map out how I would like StatisticalRethinking v3 to be structured. This is strongly influence by the approach [karajan9](https://github.com/karajan9/statisticalrethinking) is taking and will be a breaking change. The basics:
+E X P E R I M E N T A L !
 
-1. StatisticalRethinking.jl v3 will contain the common components which are independent of the used mcmc flavor, i.e. common package dependencies, new functions and data.
-
-2. Most of the current scripts in the current StatisticalRethinking.jl v2 (using Stan) will move to a new package StatisticalRethinkingStan.jl.
-
-3. This will make StatisticalRethinking.jl v3 agnostic to specific mcmc packages/flavors in Julia, e.g. Stan, Turing and DynamicHMC.
-
-4. Mcmc flavors, e.g. StatisticalRethinkingTuring.jl, StatisticalRethinkingStan.jl and possibly others, might take slightly different approaches how snippets are organized. I think this is fine as there is no single way to do this right.
-
-5. There will be common components that can be found in the src directory of the mcmc flavor packages, e.g. quap() in Turing will be a very different implementations from quap() in Stan (or DynamicHMC). These functions will imported from StatisticalRethinking.jl and new methods added using multiple dispatch.
-
-6. StatisticalRethinking.jl v3 will not be a lightweight package as it will depend on MCMCChains.jl, StatsPlots.jl, DataFrames.jl, CSV.jl, etc. But the idea is that for normal work it will only need compilation once.
-
-7. StanModels.jl v3 will continue to be just the models although for Stan at least I'm hoping to get to a setup where I can create a model once and use for multiple simulations. This is more important for Stan as a Stan Language program needs to be translated to a C++ program and subsequently compiled.
-
-8. It is too early to tell if the same route will be followed for e.g. Turing.
-
-9.The current StatisticalRethinking.jl v2 is compatible with the 2nd edition of the book. Expanded coverage of chapters 7 and beyond will likely happen while working on StatisticalRethinking.jl v3 as I got seriously sidetracked working on [StructuralCausalModels.jl](https://github.com/StatisticalRethinkingJulia/StructuralCausalModels.jl).
-
-Any feedback is appreciated. Please open an issue.
+Changes in v3 will go hand in hand with development of StatisticalRethinkingStan.jl v0.1 (not yet published).
 
 ### Version 2.2.5
 
