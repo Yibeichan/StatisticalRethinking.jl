@@ -1,7 +1,7 @@
 using StatisticalRethinking, Documenter
 
-DOC_ROOT = rel_path("..", "docs")
-DocDir =  rel_path("..", "docs", "src")
+DOC_ROOT = sr_path("..", "docs")
+DocDir =  sr_path("..", "docs", "src")
 
 page_list = Array{Pair{String, Any}, 1}();
 append!(page_list, [Pair("Introduction", "intro.md")]);
