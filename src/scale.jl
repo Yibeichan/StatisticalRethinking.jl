@@ -61,3 +61,6 @@ function scale!(
 		(df[:, var] .- mean_var)/std_var
 
 end
+
+export
+	scale!

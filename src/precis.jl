@@ -1,5 +1,3 @@
-using StatsBase
-
 function precis(df::DataFrame; digits=3, depth=Inf, alpha=0.11)
   m = zeros(length(names(df)), 5)
   for (indx, col) in enumerate(names(df))
@@ -33,11 +31,6 @@ function precis(df::DataFrame; digits=3, depth=Inf, alpha=0.11)
     (names(df), ["mean", "sd", "5.5%", "50%", "94.5%"]), 
     ("Rows", "Cols")
   )
-end
-
-
-function precis(m::SampleModel)
-  precis(read_samples(m; output_format=:dataframe))
 end
 
 

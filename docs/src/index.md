@@ -4,7 +4,7 @@ CurrentModule = StatisticalRethinking
 
 ## `rel_path`
 ```@docs
-rel_path(parts...)
+sr_path(parts...)
 ```
 
 ## link
@@ -18,25 +18,9 @@ link(dfa::DataFrame, vars, xrange)
 rescale(x::Vector{Float64}, xbar::Float64, xstd::Float64)
 ```
 
-## quap
-```@docs
-quap(df::DataFrame)
-```
-
-## sample
-```@docs
-sample(df::DataFrame, n; replace=true, ordered=false)
-```
-
 ## hpdi
 ```@docs
 hpdi(x::Vector{T}; alpha::Real=0.05) where {T<:Real}
-```
-
-## plotcoef
-```@docs
-plotcoef(models::Vector{SampleModel}, pars::Vector{Symbol}, fig::AbstractString, title="", func=nothing)
-plotcoef(model::SampleModel, pars::Vector{Symbol}, fig::AbstractString, title="", func=nothing)
 ```
 
 ## pairsplot
@@ -67,10 +51,4 @@ plotbounds(
 ```@docs
 simulate(df, coefs, var_seq)
 simulate(df, coefs, var_seq, coefs_ext)
-```
-
-##`convert_a3d`
-```@docs
-convert_a3d(a3d_array, cnames, ::Val{:dataframe})
-convert_a3d(a3d_array, cnames, ::Val{:dataframes})
 ```
