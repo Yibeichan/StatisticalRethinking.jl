@@ -33,7 +33,6 @@ function precis(df::DataFrame; digits=3, depth=Inf, alpha=0.11)
   )
 end
 
-
 const BARS = collect("▁▂▃▄▅▆▇█")
 
 function unicode_histogram(data, nbins = 12)
