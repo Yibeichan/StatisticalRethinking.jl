@@ -5,6 +5,11 @@ dist: xenial
 
 os:
   - linux
+
+branches:
+  only:
+    - master
+    - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
   
 notifications:
   email: false

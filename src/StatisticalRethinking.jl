@@ -2,7 +2,7 @@ module StatisticalRethinking
 
 using Reexport
 
-@reexport using StatsBase, Statistics
+@reexport using StatsFuns, StatsBase, Statistics
 @reexport using CSV, DataFrames, Random, Distributions
 @reexport using StatsPlots, LaTeXStrings
 
